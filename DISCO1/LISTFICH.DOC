@@ -1,0 +1,274 @@
+FICHEROS CONTENIDOS EN LOS DISCOS
+---------------------------------
+
+Disco 1
+-------
+INSTALL   EXE - Utilidad de instalaci¢n
+UNZIP     EXE - Utilidad de descompresi¢n
+LEEME     COM - Utilidad para visualizar fichero LEEME
+DRIVERS   EXE - Fichero de tablas de impresora, consulte DBDRIVER.TXT
+LISTFICH  DOC - Lista de ficheros en disco
+SYSTEM    CA1 - Fichero dBASE.EXE comprimido
+   ADDUSER4  EXE - Contador de usuarios
+   ADDUSER4  RES - Fichero de recursos de ADDUSER
+   DBASE     EXE - Fichero ejecutable dBASE
+   DBASE     VMC - Par metros por defecto VMC
+   DBASE1    437 - dBASE1.RES con p gina de c¢digos 437
+   DBASE1    850 - dBASE1.RES con p gina de c¢digos 850
+   DBASE1    HLP - Fichero de ayuda de mandatos
+   DBASE2    HLP - Fichero de ayuda dBASE
+   DBASE2    RES - Fichero de recursos dBASE
+   DBASE3    RES - Fichero de recursos dBASE
+   DBASEIV   GRP - Grupo de programas Windows
+   DBASEIV   ICO - Icono Windows para dBASE
+   DBASEIV   PIF - Fichero PIF de Windows para dBASE
+   DOCUMENT  GEN - DOCUMENT.GEN
+   FORM      GEN - FORM.GEN
+   LABEL     GEN - LABEL.GEN
+   LABEL     PRF - LABEL.PRF
+   MENU      GEN - MENU.GEN
+   MULTI16M  DOC - Fichero de documentaci¢n de MULTI16M.EXE
+   MULTI16M  EXE - Programa residente para entornos multitarea
+   PMINFO    EXE - Utilidad de informaci¢n en modo protegido
+   QUICKAPP  GEN - QUICKAPP.GEN
+   REPORT    GEN - REPORT.GEN
+   REPORT    PRF - REPORT.PRF
+   RMINFO    EXE - Utilidad de informaci¢n en modo real
+
+SYSTEM    CA6 - Secci¢n del fichero SYSTEM.ZIP
+TEMPLATE  CA2 - Secci¢n del fichero TEMPLATE.ZIP
+UTILITY   ZIP - 
+   DBDRIVER  TXT - Listado de tablas de impresora y caracter¡sticas
+   DBINFO    EXE - Utilidad informativa
+   DBINFO    ICO - Incono Windows para DBINFO
+   DBINFO    PIF - Fichero PIF de Windows para DBINFO
+   DBINFO    RES - Fichero de recursos DBINFO
+   DBLINK    EXE - Utilidad para combinar m£ltiples DBO's
+   DBLINK    RES - Fichero de rescursos DBLINK
+   DBSETUP   EXE - Utilidad para modificar configuraci¢n
+   DBSETUP   ICO - Incono Windows para DBSETUP
+   DBSETUP   PIF - Fichero PIF de Windows jpara DBSETUP
+   DBSETUP   PRD - Fichero de impresi¢n DBSETUP
+   DBSETUP   RES - Fichero de recursos DBSETUP
+   DCONVERT  EXE - Utilidad de conversi¢n de programas dBASE II a dBASE III
+
+LEEME         - Informaci¢n general
+
+Disco 2
+-------
+SAMPLES   ZIP - Fichero comprimido de ejemplos
+   MENUS     PRG - Fichero de ejemplo
+   ARTICULO  DBF - Fichero de ejemplo
+   ARTICULO  FRG - Fichero de ejemplo
+   ARTICULO  FRM - Fichero de ejemplo
+   ARTICULO  MDX - Fichero de ejemplo
+   ARTICULO  PRG - Fichero de ejemplo
+   AYUDA     PRG - Fichero de ejemplo
+   BARCOUNT  PRG - Fichero de ejemplo
+   BIENES    DBF - Fichero de ejemplo
+   BIENES    DBT - Fichero de ejemplo
+   BIENES    MDX - Fichero de ejemplo
+   CATALOG   CAT - Fichero de ejemplo
+   CLI       DBF - Fichero de ejemplo
+   CLI       FRG - Fichero de ejemplo
+   CLI       FRM - Fichero de ejemplo
+   CLI       LBL - Fichero de ejemplo
+   CLI       MDX - Fichero de ejemplo
+   CLI       PRG - Fichero de ejemplo
+   CLIENT    DBF - Fichero de ejemplo
+   CLIENTES  DBF - Fichero de ejemplo
+   CLIENTES  DBT - Fichero de ejemplo
+   CLIENTES  MDX - Fichero de ejemplo
+   CONSNOM   QBE - Fichero de ejemplo
+   CONTACTO  FMO - Fichero de ejemplo
+   CONTACTO  SCR - Fichero de ejemplo
+   COPIASEG  PRG - Fichero de ejemplo
+   DIRECC    FMO - Fichero de ejemplo
+   DIRECC    SCR - Fichero de ejemplo
+   DOCHISEL  PRG - Fichero de ejemplo
+   EJEMPLOS  CAT - Fichero de ejemplo
+   ELEMENTO  DBF - Fichero de ejemplo
+   EMPLEADO  DBF - Fichero de ejemplo
+   EMPLEADO  FRG - Fichero de ejemplo
+   EMPLEADO  FRM - Fichero de ejemplo
+   EMPLEADO  LBL - Fichero de ejemplo
+   EMPLEADO  MDX - Fichero de ejemplo
+   EMPLEADO  PRG - Fichero de ejemplo
+   EXISTEN   DBF - Fichero de ejemplo
+   EXISTEN   MDX - Fichero de ejemplo
+   FACTURAS  PRG - Fichero de ejemplo
+   GESTION   PRG - Fichero de ejemplo
+   INF_EMP   PRG - Fichero de ejemplo
+   INVENT    FRM - Fichero de ejemplo
+   INVENTAR  DBF - Fichero de ejemplo
+   INVITAC   LBL - Fichero de ejemplo
+   INVITADO  QBE - Fichero de ejemplo
+   LIBRERIA  PRG - Fichero de ejemplo
+   LLAMADA   FMO - Fichero de ejemplo
+   LLAMADA   SCR - Fichero de ejemplo
+   LOCALIZA  QBE - Fichero de ejemplo
+   MASPREF   UPD - Fichero de ejemplo
+   MOV_CTAS  DBF - Fichero de ejemplo
+   MOV_CTAS  FRG - Fichero de ejemplo
+   MOV_CTAS  FRM - Fichero de ejemplo
+   MOV_CTAS  MDX - Fichero de ejemplo
+   MOV_CTAS  PRG - Fichero de ejemplo
+   MOVEWIN   PRG - Fichero de ejemplo
+   MROWCOL   PRG - Fichero de ejemplo
+   NOM_ACCI  DBF - Fichero de ejemplo
+   NOM_ACCI  MDX - Fichero de ejemplo
+   NOMB_CLI  NDX - Fichero de ejemplo
+   NOMBRES   DBF - Fichero de ejemplo
+   NOMBRES   MDX - Fichero de ejemplo
+   NOMBRETI  LBL - Fichero de ejemplo
+   OBJETOS   FMO - Fichero de ejemplo
+   OBJETOS   SCR - Fichero de ejemplo
+   ONMOUSE   PRG - Fichero de ejemplo
+   PAISANOS  FRG - Fichero de ejemplo
+   PAISANOS  FRM - Fichero de ejemplo
+   PEDIDOS   DBF - Fichero de ejemplo
+   PEDIDOS   DBT - Fichero de ejemplo
+   PEDIDOS   FRG - Fichero de ejemplo
+   PEDIDOS   FRM - Fichero de ejemplo
+   PEDIDOS   MDX - Fichero de ejemplo
+   PEDIDOS   PRG - Fichero de ejemplo
+   PERSOBAK  DBF - Fichero de ejemplo
+   PERSONAS  DBF - Fichero de ejemplo
+   PERSONAS  MDX - Fichero de ejemplo
+   PRE_ACCI  DBF - Fichero de ejemplo
+   PRE_ACCI  MDX - Fichero de ejemplo
+   PREFIJOS  DBF - Fichero de ejemplo
+   PREFIJOS  FRG - Fichero de ejemplo
+   PREFIJOS  FRM - Fichero de ejemplo
+   PREFIJOS  MDX - Fichero de ejemplo
+   PREFIJOS  PRG - Fichero de ejemplo
+   PROVEEDS  DBF - Fichero de ejemplo
+   PROVEEDS  FRG - Fichero de ejemplo
+   PROVEEDS  FRM - Fichero de ejemplo
+   PROVEEDS  LBL - Fichero de ejemplo
+   PROVEEDS  MDX - Fichero de ejemplo
+   PROVEEDS  PRG - Fichero de ejemplo
+   REFEREN   DBF - Fichero de ejemplo
+   SUSTISER  ASM - Fichero de ejemplo
+   SUSTISER  BIN - Fichero de ejemplo
+   SYSAUTH   DBF - Fichero de ejemplo
+   SYSCOLAU  DBF - Fichero de ejemplo
+   SYSCOLS   DBF - Fichero de ejemplo
+   SYSDBS    SMP - Fichero de ejemplo
+   SYSIDXS   DBF - Fichero de ejemplo
+   SYSKEYS   DBF - Fichero de ejemplo
+   SYSSYNS   DBF - Fichero de ejemplo
+   SYSTABLS  DBF - Fichero de ejemplo
+   SYSTIME   MEM - Fichero de ejemplo
+   SYSTIMES  DBF - Fichero de ejemplo
+   SYSVDEPS  DBF - Fichero de ejemplo
+   SYSVIEWS  DBF - Fichero de ejemplo
+   TARJREC   FRM - Fichero de ejemplo
+   TARJSOLO  LBL - Fichero de ejemplo
+   TARJSOLO  LBO - Fichero de ejemplo
+   TODOS     LBL - Fichero de ejemplo
+   TODOS     LBO - Fichero de ejemplo
+   TODOSPER  FRM - Fichero de ejemplo
+   TRANSACC  DBF - Fichero de ejemplo
+   TRANSACC  MDX - Fichero de ejemplo
+   UNIDACTV  ASM - Fichero de ejemplo
+   UNIDACTV  BIN - Fichero de ejemplo
+   VENDER    DBF - Fichero de ejemplo
+   VENTAS    DBF - Fichero de ejemplo
+
+SQLHOME   ZIP - Fichero comprimido SQL
+   SQLDBASE  STR - Fichero del sistema SQL
+   SYSAUTH   DBF - Fichero del sistema SQL
+   SYSCOLAU  DBF - Fichero del sistema SQL
+   SYSCOLS   DBF - Fichero de ejemplo
+   SYSDBS    DBF - Fichero del sistema SQL
+   SYSIDXS   DBF - Fichero del sistema SQL
+   SYSKEYS   DBF - Fichero del sistema SQL
+   SYSSYNS   DBF - Fichero del sistema SQL
+   SYSTABLS  DBF - Fichero del sistema SQL
+   SYSTIME   MEM - Fichero de ejemplo
+   SYSTIMES  DBF - Fichero del sistema SQL
+   SYSVDEPS  DBF - Fichero del sistema SQL
+   SYSVIEWS  DBF - Fichero del sistema SQL
+
+SYSTEM    CA5 - Secci¢n del fichero SYSTEM.ZIP
+SYSTEM    CA7 - Secci¢n del fichero SYSTEM.ZIP
+TEMPLATE  CA1 - Fichero comprimido de lenguaje de plantilla
+   AD_APND   COD - Fichero de lenguaje de plantilla
+   AD_BROW   COD - Fichero de lenguaje de plantilla
+   AD_CALL   COD - Fichero de lenguaje de plantilla
+   AD_COPY   COD - Fichero de lenguaje de plantilla
+   AD_DELE   COD - Fichero de lenguaje de plantilla
+   AD_EDIT   COD - Fichero de lenguaje de plantilla
+   AD_EXP    COD - Fichero de lenguaje de plantilla
+   AD_FCOPY  COD - Fichero de lenguaje de plantilla
+   AD_IMP    COD - Fichero de lenguaje de plantilla
+   AD_INLN   COD - Fichero de lenguaje de plantilla
+   AD_LABL   COD - Fichero de lenguaje de plantilla
+   AD_LIST   COD - Fichero de lenguaje de plantilla
+   AD_NDX    COD - Fichero de lenguaje de plantilla
+   AD_PACK   COD - Fichero de lenguaje de plantilla
+   AD_PROG   COD - Fichero de lenguaje de plantilla
+   AD_RECL   COD - Fichero de lenguaje de plantilla
+   AD_REPL   COD - Fichero de lenguaje de plantilla
+   AD_REPT   COD - Fichero de lenguaje de plantilla
+   AD_RNDX   COD - Fichero de lenguaje de plantilla
+   AD_SORT   COD - Fichero de lenguaje de plantilla
+   AD_XDOS   COD - Fichero de lenguaje de plantilla
+   APPLCTN   DEF - Fichero de lenguaje de plantilla
+   AS_ACTN   COD - Fichero de lenguaje de plantilla
+   AS_CLNUP  COD - Fichero de lenguaje de plantilla
+   AS_HEADR  COD - Fichero de lenguaje de plantilla
+   AS_HELP   COD - Fichero de lenguaje de plantilla
+   AS_MENU   COD - Fichero de lenguaje de plantilla
+   AS_MENUB  COD - Fichero de lenguaje de plantilla
+   AS_MUSER  COD - Fichero de lenguaje de plantilla
+   AS_PAUSE  COD - Fichero de lenguaje de plantilla
+   AS_POSIT  COD - Fichero de lenguaje de plantilla
+   AS_PRIN   COD - Fichero de lenguaje de plantilla
+   AS_PROC   COD - Fichero de lenguaje de plantilla
+   AS_SETUP  COD - Fichero de lenguaje de plantilla
+   AS_TPOST  COD - Fichero de lenguaje de plantilla
+   AS_TRCE   COD - Fichero de lenguaje de plantilla
+   AS_UDF    COD - Fichero de lenguaje de plantilla
+   BUILTIN   DEF - Fichero de lenguaje de plantilla
+   CM_UDF    COD - Fichero de lenguaje de plantilla
+   CM_UDF    COD - Fichero de lenguaje de plantilla
+   CODE_DOC  COD - Fichero de lenguaje de plantilla
+   DD_APND   COD - Fichero de lenguaje de plantilla
+   DD_BROW   COD - Fichero de lenguaje de plantilla
+   DD_COPY   COD - Fichero de lenguaje de plantilla
+   DD_DELE   COD - Fichero de lenguaje de plantilla
+   DD_EDIT   COD - Fichero de lenguaje de plantilla
+   DD_EXPT   COD - Fichero de lenguaje de plantilla
+   DD_FCOPY  COD - Fichero de lenguaje de plantilla
+   DD_IMPT   COD - Fichero de lenguaje de plantilla
+   DD_LABL   COD - Fichero de lenguaje de plantilla
+   DD_LIST   COD - Fichero de lenguaje de plantilla
+   DD_PACK   COD - Fichero de lenguaje de plantilla
+   DD_RECL   COD - Fichero de lenguaje de plantilla
+   DD_REPL   COD - Fichero de lenguaje de plantilla
+   DD_REPT   COD - Fichero de lenguaje de plantilla
+   DD_SORT   COD - Fichero de lenguaje de plantilla
+   DGEN      EXE - DGEN.EXE
+   DS_BOX    COD - Fichero de lenguaje de plantilla
+   DS_DOC    COD - Fichero de lenguaje de plantilla
+   DS_ORDER  COD - Fichero de lenguaje de plantilla
+   DS_TPOST  COD - Fichero de lenguaje de plantilla
+   DS_UDF    COD - Fichero de lenguaje de plantilla
+   DTC       EXE - DTC.EXE
+   FORM      COD - Fichero de lenguaje de plantilla
+   FORM      DEF - Fichero de lenguaje de plantilla
+   LABEL     COD - Fichero de lenguaje de plantilla
+   LABEL     DEF - Fichero de lenguaje de plantilla
+   QUICKAPP  COD - Fichero de lenguaje de plantilla
+   REPORT    COD - Fichero de lenguaje de plantilla
+   REPORT    DEF - Fichero de lenguaje de plantilla
+   SCHEMA    DEF - Fichero de lenguaje de plantilla
+
+
+Disco 3
+-------
+SYSTEM    CA2 - Secci¢n del fichero SYSTEM.ZIP
+SYSTEM    CA3 - Secci¢n del fichero SYSTEM.ZIP
+SYSTEM    CA4 - Secci¢n del fichero SYSTEM.ZIP

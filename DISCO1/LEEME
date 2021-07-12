@@ -1,0 +1,708 @@
+
+		    Bienvenido a dBASE IV versi¢n 2.0 
+		    ---------------------------------
+
+Este fichero contiene informaci¢n importante sobre dBASE IV 2.0 as¡ como
+cambios en la documentaci¢n. La informaci¢n contenida en este fichero 
+prevalece sobre la documentaci¢n de dBASE IV.
+
+INDICE
+------
+1.  C¢mo ponerse en contacto con Borland
+2.  Problemas de Configuraci¢n
+3.  Notas sobre la Optimizaci¢n de filtros en dBASE 2.0
+4.  Informaci¢n sobre las tablas de idioma
+5.  Compartici¢n de ficheros y entorno multitarea
+6.  Ejecuci¢n de dBASE en sesiones m£ltiples
+7.  Creaci¢n de ayuda personalizada
+8.  Creaci¢n de men£s de ventana para validaci¢n de datos
+9.  Mejoras en la comparaci¢n de series
+10. Cambios en la documentaci¢n
+11. Compatibilidad
+
+1. COMO PONERSE EN CONTACTO CON BORLAND
+---------------------------------------
+Si encuentra cualquier problema con el producto, consulte los manuales 
+y el contenido de este fichero, si a£n necesita ayuda, puede obtenerla
+de la siguiente manera:
+
+     1. Llame al Departamento de Servicio T‚cnico de BORLAND al n£mero
+       327-1271 326-5171 326-4816) , o por fax al 326-6285
+	    Por favor, tenga preparada la siguiente informaci¢n antes de
+       llamar:
+
+     a. Nombre del producto y n£mero de serie que se encuentra en el
+	Disco de Instalaci¢n. Sin este n£mero de serie su llamada no
+	ser  atendida.
+
+     b. Versi¢n del producto. 
+
+     c. Marca y modelo de su ordenador y de cualquier otro hardware
+	adicional de su equipo.
+
+     d. Sistema operativo y versi¢n. (Podr  ver la versi¢n del sistema
+	operativo tecleando VER desde el indicativo del DOS).
+
+     e. Contenido del fichero AUTOEXEC.BAT.
+
+     f. Contenido del fichero CONFIG.SYS.
+
+     NOTA: Puede obtener la informaci¢n necesaria tecleando el siguiente
+     mandato desde el indicativo del DOS: DBINFO -x -o. Este mandato crea
+     un fichero, DBINFO.TXT, que incluye informaci¢n sobre su hardware,
+     configuraci¢n, sistema operativo, CONFIG.SYS y AUTOEXEC.BAT.
+
+
+2. PROBLEMAS DE CONFIGURACION
+-----------------------------
+P1:  No puedo ejecutar dBASE IV 2.0 bajo Windows 3.1. Aparece el mensaje
+     de error "Memoria insuficiente".
+
+R1:  dBASE IV 2.0 necesita aproximadamente 4MB de memoria virtual. Utilice
+     el siguiente procedimiento para obtener informaci¢n sobre la memoria
+     disponible y su ajuste:  
+     
+     1)  Desde el Administrador de programas de Windows, seleccione
+	 Acerca del Administrador de programas del men£ Ayuda...
+	 y compruebe la memoria disponible.
+
+	 a) Si tiene MENOS de 4MB de memoria disponible, lea el apartado 2.
+
+	 b) Si tiene MAS de 4MB, compruebe la memoria XMS seleccionando
+	    el icono MS-DOS, y tecleando PMINFO desde el indicativo del DOS.
+	    Esta utilidad le informa sobre la memoria disponible para
+	    programas DOS-16M. Si tiene menos de 3MB disponibles lea el 
+	    apartado 2.
+
+     2)  Aumente tama¤o de fichero de intercambio (swap). Para ello:
+	 a) Seleccione Panel de Control.
+	 b) Despu‚s 386 extendido.
+	 c) Haga Click en el bot¢n Memoria virtual.
+	 d) Haga Click en el bot¢n Cambiar.
+	 e) Aumente el valor de la opci¢n Tama¤o nuevo.
+
+	 Este procedimiento aumentar  la cantidad de memoria virtual
+	 disponible.    
+
+     3)  Si tiene problemas ejecutando dBASE en sesiones m£ltiples,
+	 salga de dBASE en todas las sesiones y teclee SET DOS16M=:4M 
+	 desde el indicativo del DOS. Este mandato asigna un m ximo de 
+	 4MB para cada una de las sesiones de trabajo dBASE.
+
+
+P2:  Utilizo Workgroup para Windows. ¨C¢mo configuro dBASE IV 2.0 para
+     un buen funcionamiento en este entorno?
+
+R2:  Utilice la misma configuraci¢n de memoria en Windows 3.1 descrita
+     en el apartado anterior.
+
+
+P3:  ¨Por qu‚ no hay una opci¢n de cach‚ en la instalaci¢n?
+
+R3:  dBASE IV 2.0 utiliza toda la memoria extendida disponible y no
+     necesita una configuraci¢n cach‚ de disco.
+
+
+P4:  Al ejecutar dBASE bajo Windows 3.1, aparece el mensaje "LOCALSHARE est 
+     activado, imposible ejecutar dBASE IV..." y a continuaci¢n "Error de
+     inicializaci¢n." ¨Qu‚ debo hacer?
+
+R4:  LOCALSHARE es un par metro nuevo del fichero Config.db que permite
+     compartir ficheros en un entorno multitarea como Windows 3.1. Est 
+     activado por omisi¢n. Al ejecutar bajo Windows 3.1, dBASE comprueba
+     si SHARE.EXE esta cargado, SHARE.EXE es el programa DOS que proporciona
+     la posibilidad de compartir y bloquear ficheros. Si SHARE.EXE no est 
+     cargado obtendr  el mensaje "LOCALSHARE est  activado, imposible
+     ejecutar dBASE IV...".  
+
+     Dependiendo del entorno de trabajo, utiliza uno de los siguientes
+     procedimientos:
+
+     1)  Si no necesita compartir ficheros con otras sesiones de trabajo
+	 dBASE o con otras aplicaciones (como Quattro), utilice DBSETUP
+	 para editar el fichero CONFIG.DB y desactivar la opci¢n LOCALSHARE.
+
+     2)  Si necesitar compartir ficheros, ejecute SHARE desde el indicativo
+	 del DOS. Consulte el manual del DOS.
+
+
+P5:  Al ejecutar dBASE, aparece el mensaje "El sistema no est  configurado 
+     para la p gina de c¢digos actual...". ¨Qu‚ debo hacer?
+
+R5:  Este error se produce cuando durante la instalaci¢n de dBASE 2.0 ha 
+     seleccionado una p gina de c¢digos diferente a la que tiene activa en 
+     el sistema operativo. Utilice el siguiente procedimiento:
+
+     1)  Desde el indicativo del DOS, teclee CHCP para averiguar la p gina
+	 de c¢digos del sistema.
+     2)  Vuelva a instalar dBASE IV 2.0.
+     3)  En la opci¢n P gina de c¢digos, seleccione el mismo valor que
+	 el del sistema. (Por omisi¢n, la utilidad de instalaci¢n dBASE IV
+	 muestra la p gina de c¢digos activa en el sistema.)
+
+
+P6:  Tengo una versi¢n anterior de dBASE instalada en el disco duro. Quiero
+     que la instalaci¢n de dBASE IV 2.0 sobreescriba autom ticamente los
+     ficheros existentes. ¨Qu‚ debo hacer?
+
+R6:  La utilidad de instalaci¢n dBASE IV 2.0 le permite seleccionar dos
+     opciones "proteger" los ficheros del sistema dBASE IV y SQL existentes,
+     o sobreescribirlos. Utilice el siguiente procedimiento para sobreescribir
+     los ficheros de versiones anteriores:
+
+     1)  Durante la instalaci¢n, seleccione: 
+	 "Opciones de instalaci¢n... [MANTENERDB4 PROTEGERSQL]"
+	 La utilidad de instalaci¢n muestra las siguientes opciones:
+
+	 Mantener ficheros de sistema dBASE IV existentes: [S¡]
+	 Proteger ficheros de sistema SQL existentes:      [S¡]
+
+     2)  Cambie las opciones a "No" pulsando RETURN en la opci¢n 
+	 sobreiluminada. RETURN cambia el par metro.
+
+     3)  Pulse Esc para volver al men£ anterior.
+
+
+P7:  Al ejecutar dBASE, aparece el mensaje "Mandato o nombre de 
+     fichero err¢neo". ¨Qu‚ debo hacer?
+
+R7:  Puede que dBASE no est‚ en la v¡a de acceso. Incluya dBASE en la
+     v¡a de acceso del DOS, o teclee C:\DBASE\DBASE desde el indicativo.
+
+     Compruebe que DBASE.EXE est  en el directorio dBASE. Si no es as¡,
+     vuelva a instalar dBASE IV. Aseg£rese de que en la opci¢n
+     "Configuraci¢n... [dBASE EJEMPLOS DTL UTILIDADES], "dBASE IV" el
+     par metro es S¡."
+
+P8:  Al ejecutar dBASE IV, aparece en blanco y negro. ¨Qu‚ ha ocurrido 
+     con los colores?
+
+R8:  dBASE IV 2.0 aparece en blanco y negro en las siguientes situaciones:  
+     - Ha realizado una instalaci¢n en red
+     - Existe un fichero CONFIG.DB anterior en el directorio dBASE 
+       (La utilidad de instalaci¢n no sobreescribe o modifica el
+       fichero CONFIG.DB durante el proceso de instalaci¢n)
+     - Est  utilizando un monitor CGA
+
+     Para restablecer los colores por defecto consulte la secci¢n
+     "Definici¢n de colores y n£mero de l¡neas" en el Cap¡tulo 2
+     del manual Puesta en Marcha.
+
+P9:  Al ejecutar dBASE, aparece el mensaje de error VM 5312 ¢ 5313. 
+     ¨Qu‚ significa y qu‚ debo hacer?
+
+R9:  Ha intentado ejecutar una operaci¢n en el  rea baja de memoria del
+     DOS, la cual estaba fragmentada.  Para solucionar este problema,
+     deber  reducir la cantidad de memoria baja de DOS que dBASE utiliza.
+     Para hacerlo utilice el siguiente procedimiento:
+
+     1.  Desde el indicador de dBASE, teclee  ? MEMORY(5).  Esta funci¢n
+	 de vuelve la cantidad de memoria que VMM est  utilizando.
+     2.  Reste 222 del valor devuelto por MEMORY(5).
+     3.  Utilice el valor resultante como el valor de MAXMEM en el fichero
+	 DBASE.VMC.
+     4.  Si el valor resultante es MENOR QUE 1024, establezca MINMEM en el
+	 fichero DBASE.VMC con este mismo valor.
+
+     Por ejemplo: 
+     
+     Si ? MEMORY(5) devuelve 1200, ponga MAXMEM y MINMEM a 978 (1200 - 222).
+     Si ? MEMORY(5) devuelve 1600, ponga MAXMEM a 1378 (1600 - 222).
+
+
+
+3. NOTAS SOBRE LA OPTIMIZACION DE FILTROS EN dBASE 2.0
+-------------------------------------------------------
+La informaci¢n de esta secci¢n complementa la informaci¢n contenida
+en el cap¡tulo 34 del Manual "Programaci¢n en dBASE IV"
+
+Las condiciones donde se produce una optimizaci¢n completa son:
+- La base de datos est  en orden natural y la condici¢n de filtro
+  corresponde con el orden actual o el ¡ndice abierto
+- La base de datos est  indexada y la condici¢n de filtro corresponde
+  con la del ¡ndice maestro
+- La base de datos est  indexada por una clave compleja (por ejemplo
+  apellido+nombre+direcci¢n), y la condici¢n de filtro corresponde con
+  parte de la clave (por ejemplo apellido o apellido+nombre)
+
+La siguiente tabla muestra expresiones de ejemplos que est n total o
+parcialmente optimizados:
+
+Expresiones                                              Optimizaci¢n
+---------------------------------------------------------------------
+INDEX ON Provincia TAG Provincia
+SET FILTER TO Provincia="MA" .OR. Provincia="CO"                Total
+
+INDEX ON Provincia+codpost TAG Provincod
+SET FILTER TO Provincia+Codpost="M23020"                       
+SET FILTER TO Provincia="MA"                                    Total
+
+INDEX ON Provincia TAG Provincia
+SET FILTER TO .NOT. Provincia="B"                               Total
+
+INDEX ON Apellido TAG Apellido
+INDEX ON Year(fecha_ent) TAG fecha_ent
+LIST FOR Year(fecha_ent)=1993 .AND. Apellido="P‚rez"            Total
+
+INDEX ON STR(OrdenNo,6)+STR(StockNo,6) TAG Lineacod
+LIST FOR STR(OrderNo,6)="100001"                                Total
+
+SET FILTER TO Provincia="B" .OR. Provincia="M" && sin ¡ndice  Parcial 
+
+SET FILTER TO Provincia+codpost="M20023"  && sin ¡ndice       Parcial
+
+INDEX ON Apellido TAG Apellido
+SET ORDER TO Nombre
+SET FILTER TO Apellido="P‚rez"                                Parcial
+
+SET FILTER TO "S nchez" $ Apellido
+COUNT                                                   No es total;
+SUM                                                     dBASE retiene       
+							el resultado de
+							la b£squeda de
+							la operaci¢n
+							anterior
+SET FILTER TO FOUND(2)                                  No    
+							  
+
+
+4. INFORMACION SOBRE TABLAS DE IDIOMA                               
+-------------------------------------
+Esta informaci¢n complementa la contenida en las p ginas 358 y 359
+del manual Referencia del Lenguaje dBASE sobre tablas de idioma.
+
+dBASE IV versi¢n 2.0 soporta las p ginas de c¢digos DOS (juegos de 
+caracteres) 437 y 850. Las versiones anteriores s¢lo soportaban la 
+p gina de c¢digos 437. Si decide cambiar a la 850 (disponible en 
+todos los sistemas con DOS 5.0 o superior), tenga en cuenta que los 
+ficheros dBASE creados en sistemas con p gina de c¢digos 850 pueden 
+aparecer cambiados en sistemas que utilicen la p gina de c¢digos 
+437 y viceversa.  
+
+Esto se debe a que muchos de los caracteres extendidos ASCII (>127) 
+son diferentes en las dos p ginas de c¢digos, si utiliza estos 
+caracteres en las bases de datos, obtendr  diferentes resultados en
+la visualizaci¢n como en la ordenaci¢n de los datos. 
+
+Para asegurar la integridad de los datos, dBASE IV 2.0 marca cada uno  
+de los ficheros (.dbf) y los ¡ndices (.ndx o .mdx) con un identificador
+de tabla de idioma. Este identificador detecta la p ginas de c¢digos 
+y tabla de idioma con que fue creado el fichero. Cuando intente abrir
+un fichero, dBASE compara la tabla de idioma asignada al fichero con
+la p gina de c¢digos del sistema. Si son diferentes, dBASE mostrar 
+un mensaje de advertencia que le permite continuar con la operaci¢n
+o cancelarla.
+
+Si, por ejemplo, est  utilizando la p gina 850 y abre una base de datos
+dBASE IV 2.0 creada con la p gina 437, dBASE le avisar  que las tablas 
+de idioma no coinciden. Puede cancelar la operaci¢n o utilizar el fichero. 
+Si utiliza el fichero y tiene un ¡ndice asociado, dBASE le avisar  de 
+nuevo y le pedir  que cancele la operaci¢n o que vuelva a indexar el
+fichero con la tabla de idioma actual. Si opta por reindexar el fichero,
+dBASE marca el fichero con un nuevo identificador de tabla de idioma. 
+
+Las bases de datos e ¡ndices creados con versiones anteriores de dBASE 
+no tiene identificador de tabla de idioma, si abre una de estas bases
+de datos en dBASE IV 2.0 con la p gina de c¢digos 437, dBASE autom ti-
+camente le asignar  el identificador de la p gina de c¢digos actual.
+Si abre ficheros de versiones anteriores con la p gina de c¢digos 850,
+dBASE le pide que vuelva a indexar la base de datos con la tabla de
+idioma actual.
+
+El identificador asignado a cada fichero de ¡ndice se modifica cada vez
+que reindexa el fichero con una tabla de idioma diferente. El identificador
+asignado a los ficheros de datos es permanente.  
+
+Para asignar un nuevo identificador de tabla de idioma a un fichero
+de datos, utilice los mandatos COPY STRUCTURE y APPEND FROM para crear
+una nueva base de datos y transferir los datos con la tabla de idioma 
+actual.
+
+NOTA:  Cambiando el la tabla de idioma en las bases de datos NO convierte
+       los caracteres ASCII extendidos que no coincidan entra las p ginas
+       de c¢digos. Deber  cambiarlos para asegurar la integridad de sus
+       datos.
+
+
+5. COMPARTICION DE FICHEROS Y ENTORNO MULTITAREA
+------------------------------------------------
+Muchos sistemas operativos y programas, como OS/2, Windows, DOSSHELL, 
+y DESQVIEW, permiten al usuario la posibilidad de ejecutar dBASE y 
+compartir ficheros en m£ltiples sesiones de trabajo. Puede ejecutar 
+dBASE en nueve (m ximo) sesiones de trabajo al mismo tiempo, y utilizar
+los mismos ficheros en m s de una sesi¢n. Tambi‚n puede compartir ficheros
+dBASE con otras aplicaciones como Quattro.
+
+Para compartir ficheros en un sistema local, dBASE incorpora una opci¢n 
+para proteger los ficheros dBASE de conflictos multitarea, est  opci¢n es 
+LOCALSHARE y se define en el fichero Config.db.
+
+Si desea utilizar ficheros dBASE en m s de una sesi¢n o aplicaci¢n, 
+active LOCALSHARE=ON (por omisi¢n) para activar la protecci¢n,
+y elimine la sentencia EXCLUSIVE=ON o desact¡vela modificando la sentencia
+a EXCLUSIVE=OFF en el fichero CONFIG.DB.  
+
+Cuando LOCALSHARE est  activado, dBASE comprueba y se asegura de que
+se ha ejecutado SHARE.EXE, utilidad DOS que permite la compartici¢n y
+bloqueo de fichero en el disco duro. Si dBASE detecta que SHARE est 
+activo, proteger  las bases de datos de igual manera que en un entorno
+de red local. Por ejemplo, dBASE actualizar  la base de datos en el
+disco duro cada vez que se modifica un registro.
+
+NOTA:  SHARE limita el n£mero de ficheros que puede abrir y el n£mero de
+       bloqueos disponibles. Puede aumentar estos l¡mites utilizando los
+       par metros /f y /l al ejecutar el mandato SHARE. Consulte el 
+       manual del DOS para m s informaci¢n.
+
+A diferencia de ejecutar dBASE IV en entorno multiusuario, cada sesi¢n de
+trabajo multitarea utiliza el mismo nombre de fichero (TRANSLOG.LOG) para
+el proceso de transacciones.
+
+Si LOCALSHARE est  activado (ON) y ejecuta dBASE bajo Windows sin haber
+cargado SHARE.EXE, dBASE muestra un mensaje indicado que debe ejecutar 
+SHARE.EXE. Puede desactivar la compartici¢n de ficheros desactivando 
+la opci¢n LOCALSHARE (OFF) en el fichero CONFIG.DB.   
+
+
+6. EJECUCION DE dBASE EN SESIONES MULTIPLES
+-------------------------------------------
+Si ejecuta dBASE en m£ltiples sesiones, dBASE asigna un identificador
+£nico a cada sesi¢n. El identificador es un n£mero del 1 al 9 y se
+a¤ade al identificador de usuario en un entorno de red. Por ejemplo, en
+una red local el nombre de un usuario es "GLAMAS", la primera sesi¢n es
+"GLAMAS1". En un entorno monousuario donde no se utilizan identificadores,
+la primera sesi¢n ser¡a "SESION1".
+
+Los siguientes mandatos devuelven el identificador de sesi¢n:
+  ID()
+  USER()
+  LKSYS(2)
+  LKSYS(5)
+  LIST USERS
+  DISPLAY USERS
+
+Los n£meros de sesi¢n se asignan comenzando por el menor n£mero disponible.
+Ello significa que las sesiones no se ordenan cronol¢gicamente. Por ejemplo,
+si abre seis sesiones, luego cierra la sesi¢n 2, la siguiente sesi¢n que
+abra tendr  el n£mero 2, no el 6.
+
+
+7. CREACION DE AYUDA PERSONALIZADA
+----------------------------------
+El fichero de lenguaje de plantilla Form.gen le permite crear ventanas
+de ayuda personalizadas.
+
+Es posible utilizar la tecla F1 Ayuda para obtener ayuda definida por
+el usuario para un campo determinado en una pantalla de edici¢n. Cuando
+pulsa F1 Ayuda, la informaci¢n de los campos memo de una base de datos
+especial, mostrar  un men£ de ventana. Si desea crear su propio fichero
+de ayuda, cree una base de datos como se describe a continuaci¢n:
+
+El nombre de la base de datos debe comenzar con los seis primeros
+caracteres del nombre del fichero de pantalla, seguidos de "_h.dbf".
+Por ejemplo, si el fichero de pantalla se llama Pedido.fmt, el fichero
+de ayuda debe llamarse Pedido_h.dbf. La base de datos debe tener la
+siguiente estructura:
+
+	Campo  Nombre campo  Tipo       Ancho  Dec  Eti.
+	-----  ------------  ---------  -----  ---- ----
+	    1  FLD_NAME      Car cter    10          S
+	    2  FLD_HEADNG    Car cter    25          N
+	    3  FLD_HELP      Memo        10          N
+       -------------------------------------------------
+
+Introduzca los nombres de los campos en los que desea obtener ayuda en el
+campo FLD_NAME. Debe crear una etiqueta de ¡ndice Fld_name, de la siguiente
+manera:
+
+  INDEX ON UPPER( Fld_Name ) TAG Fld_Name
+
+No necesita incluir todos los campos de la base de datos en el fichero de
+Ayuda, s¢lo los que desea contengan una ventana de ayuda.
+
+Introduzca la cabecera de la ventana de ayuda en el campo fld_headng.
+
+Introduzca el texto de ayuda que desea aparezca en cada uno de los campos
+en el campo memo Fld_help. Si el texto excede el tama¤o de una ventana,
+aparecer n instrucciones de desplazamiento dentro de la ventana de ayuda.
+
+
+8. CREACION DE MENUS DE VENTANA PARA VALIDACION DE DATOS
+--------------------------------------------------------
+Utilizando CREATE/MODIFY SCREEN, se pueden crear rutinas de validaci¢n
+de datos que activen men£s de ventana que muestren las opciones v lidas
+contenidas en otra base de datos cuando el usuario intente introducir
+valores que no se encuentran en dicha base de datos.
+
+Para crear un men£ de ventana para validaci¢n de datos, comenzar con la
+opci¢n "Aceptar valores cuando" del men£ Opciones de Edici¢n del men£
+Modificar campo de la pantalla de dise¤o de formatos de pantalla. Se debe
+introducir la siguiente sentencia (incluyendo comillas):
+
+  "POPUP"="<basedatos>-><nombrecampo> ORDER <nombrecampo> [REQ] [SHADOW]"
+
+Por ejemplo, para validar el campo Cod_prove en Articulo.dbf contra
+Cod_prove en Cod_prove de Proveeds.dbf, inserte la sentencia siguiente
+en "Aceptar valores cuando" para el campo cod_prove dentro de un formato de
+pantalla que utilice el fichero articulo.dbf.
+
+  "POPUP" = "Proveeds->cod_prove ORDER cod_prove REQ SHADOW"
+
+Si quiere asignar condiciones adicionales del tipo .AND.  al men£ de ventana
+de validaci¢n, incl£yalas tras la sentencia "POPUP"="...".
+La condici¢n no deber  estar delimitada con comillas.
+
+Los componentes de esta sentencia son:
+
+POPUP                 Arranca el proceso del men£ de ventana
+		      para el campo al editarlo.
+
+Proveeds->cod_prove   Indica el fichero de base de datos a abrir
+		      el campo a utilizar para la validaci¢n de
+		      datos. Es necesario tener definida una etiqueta
+		      de ¡ndice para este campo.
+
+ORDER cod_prove       Especifica la etiqueta de ¡ndice del campo.
+
+REQ                   Indica que el usuario tiene que introducir alg£n
+		      dato en el campo antes de continuar. Es opcional.
+		      Si REQ se omite el usuario puede continuar, pulsando
+		      la tecla ESC y dejar el campo en blanco.
+
+SHADOW                Permite un efecto de sombreado alrededor del men£.
+		      Es opcional.
+
+Se puede utilizar un campo del mismo fichero .DBF con el que se est 
+trabajando u otro abierto en otra  rea de trabajo. Si embargo, el
+fichero en el que se realiza la validaci¢n y el de consulta deber n ser
+diferentes. Los men£s se muestran normalmente debajo del campo seleccionado,
+salvo que el campo se encuentre en la parte baja de la pantalla.
+
+Limitaciones de la validaci¢n mediante men£s de ventana:
+
+- Este procedimiento est  dise¤ado para trabajar con el mandato EDIT y
+  puede ser que no funcione con BROWSE correctamente. El conmutador
+  F2 en EDIT queda desactivado en esta rutina.
+
+- La validaci¢n no se puede utilizar con campos que tengan definida
+  la opci¢n de Elecci¢n m£ltiple.
+
+- No se puede utilizar en formatos creados sobre vistas que contengan
+  m s de un fichero.
+
+- Para proteger un fichero de procedimientos que est  abierto. EDIT
+  lo cerrar  al entrar y lo volver  a abrir al salir. Si esto presenta
+  alg£n problema con formatos que utilicen procedimientos, consulte el
+  mandato SET LIBRARY en el manual de Referencia del Lenguaje, Sysproc
+  y SET LIBRARY en el manual de Programaci¢n en dBASE IV.
+
+- Los seis primeros caracteres del nombre del formato y los primeros ocho
+  del campo deber n ser £nicos.
+
+
+9. MEJORAS EN LA COMPARACION DE SERIES
+--------------------------------------
+En dBASE IV 2.0, se han mejorado las comparaciones de series con caracteres
+ASCII extendidos. Si utiliza LANGTABLES=ON y SET EXACT OFF, la diferencias 
+secundarias entre caracteres se ignoran. Por ejemplo:
+
+      SET EXACT OFF
+      ? " bc" = "abc"
+      .T.
+
+En versiones anteriores de dBASE IV, ? " bc" = "abc" habr¡a devuelto .F.
+
+Es recomendable reindexar los ficheros de versiones anteriores si trabaja
+con LANGTABLES=ON, SET EXACT OFF, y INDEX ON con una condici¢n FOR.
+
+
+10. CAMBIOS EN LA DOCUMENTACION
+-------------------------------
+Esta secci¢n del fichero LEEME contiene informaci¢n nueva y correciones
+a los manuales de dBASE IV.
+
+"Puesta en Marcha"
+------------------
+- p. 10: Al ejecutar dBASE IV con Windows 3.1 en modo extendido, utilice 
+  la variable de entorno SET DOS16M del DOS a un valor de memoria m xima
+  de 4 o superior.
+
+- p. 11:  Al ejecutar dBASE IV con OS/2, configurar DPMI_MEMORY_LIMIT a 4
+  o superior.
+
+"Programaci¢n en dBASE IV"
+--------------------------
+
+
+- p. 520:  VMM se ejecuta autom ticamente al arrancar dBASE IV si el
+  sistema dispone de menos de 4.5MB de memoria extendida o si modifica
+  los par metros del fichero de configuraci¢n DBASE.VMC.
+
+- p. 501:  Los par metros siguientes son valores v lidos para BUFFSIZE
+  en DBASEIV_BUFF:  1, 2, 4, 7, 8 (omisi¢n), 9, 15, 20, 21, 30, 31, y 32.
+  Los buffers se ubican din micamente en segmentos de 64K.  Cada buffer
+  ubica informaci¢n de control de cabecera.  Consecuentemente, los tama¤os
+  m s grandes (como 16 y 32) que son divisiones exactas de 64 malgastan
+  cantidades sustanciales de memoria (casi un buffer entero) porque el
+  £ltimo buffer (m s su cabecera) no cabe en el segmento de 64K.
+
+  Se puede optimizar el uso de memoria utilizando tama¤os de buffer que 
+  est‚n cercanos a un divisor impar de 63, por ejemplo, 7, 9, 15, ¢ 21.  
+  Con estos tama¤os de buffer, la memoria extendida se utiliza de una manera
+  m s eficiente ya que un mayor n£mero de buffers caben en el mismo espacio
+  f¡sico, aumentando adem s el tama¤o efectivo del buffer. 
+  De esta manera se mejora la velocidad de E/S de dBASE en su conjunto.
+
+  Generalmente tama¤os grandes de buffer (como 21) suministran m s velocidad
+  en procesos secuenciales, como el mandato SCAN sin un ¡ndice activo o
+  copiando partes de un fichero en otro.  Los tama¤os m s peque¤os se
+  recomiendan para accesos aleatorios a ficheros.
+
+  Los valores 1 y 32 son configuraciones eficientes de por s¡.  Los valores
+  7 y 21  suministran prestaciones buenas en conjunto.  En redes, los valores
+  m s peque¤os como 2 ¢ 4, mejoran las prestaciones.
+
+- p. 532:  Los mandatos que se citan a continuaci¢n  se deben a¤adir a la
+  lista de mandatos que se optimizan cuando se utiliza la cl usula FOR:
+  BLANK, DISPLAY, e INDEX.  SCAN es optimizado £nicamente cuando es 
+  precedido por SET FILTER TO.
+
+"Referencia del Lenguaje"
+------------------------
+- p. 62:  Si a¤ade registros de un fichero con formato SDF (System Data
+  Format), es posible aumentar la velocidad de proceso de APPEND FROM
+  utilizando la cl usula opcional NOVERIFY para desactivar la verifica-
+  ci¢n de errores y la validaci¢n de datos.  Si utiliza NOVERIFY, los
+  datos son copiados del fichero fuente tal y como est n en los campos
+  del fichero destino. Por ejemplo:
+
+	APPEND FROM Mifich TYPE SDF NOVERIFY
+
+  Debe utilizar esta opci¢n £nicamente si el formato de los datos es
+  correcto.  Sin la validaci¢n de datos, dBASE no verifica ni convierte
+  los datos para incluirlos en los campos del fichero destino.
+  Por ejemplo, dBASE no tendr¡a en cuenta el valor del mandato POINT, y
+  s¢lo aceptar¡a un punto como separador decimal. 
+ 
+- p. 250:  Si ejecuta dBASE en un entorno multiusuario o multitarea, y
+  utiliza REPLACE con una cl usula de  mbito para sustituir un campo
+  indexado, ser  necesario tener un uso exclusivo de la base de datos.  
+  De esta manera se asegura que todos los registros se sustituyen de
+  forma correcta.
+
+- p. 289:  Esta versi¢n de dBASE mejora el proceso interno del mandato
+  USE AGAIN.  Si utiliza la misma base de datos en diferentes  reas de 
+  trabajo, cualquier modificaci¢n realizada en una de los  reas de trabajo
+  se refleja autom ticamente en las otras.
+
+  NOTA:  Si el entorno de trabajo es multitarea (LOCALSHARE=ON) o multi-
+  usuario, SET EXCLUSIVE debe estar en OFF para poder utilizar el mandato
+  USE AGAIN.  Si SET EXCLUSIVE est  en ON, dBASE muestra el mensaje 
+  "El fichero ya est  abierto".
+
+- p. 225:  Si omite <mandato> con ON SELECTION BAR, se desactivar  el mandato
+  previamente asignado al elemento de men£ especificado y el mandato especifi-
+  cado con ON SELECTION POPUP se asocia al men£ de l¡nea.
+
+- p. 227:  Si omite <mandato> con ON SELECTION PAD, se desactivar  el mandato
+  previamente asignado a la l¡nea de men£ especificada, y el mandato especifi-
+  cado con ON SELECTION MENU se asocia a la l¡nea.
+
+- p. 299, 351, 364:  El SET BLOCKSIZE define el mismo tama¤o de bloque
+  tanato para campos memo (ficheros .dbt) como para ¡ndices (ficheros .mdx).  
+  En esta versi¢n de dBASE, se pueden especificar tama¤os diferentes tama¤os
+  de bloque mediante SET MBLOCK y SET IBLOCK respectivamente. A continuaci¢n
+  describe como afectan unos mandatos a otros:
+
+  - Si modifica el valor de BLOCKSIZE a trav‚s de DBSETUP, dBASE IV modifica
+    los valores de IBLOCK y MBLOCK a los valores equivalentes.  Por ejemplo,
+    BLOCKSIZE igual a 2 modifica IBLOCK a 2 y MBLOCK a 16.  Cada uno equivale
+    a un tama¤o de bloque de 1024 bytes.
+
+  - A trav‚s de DBSETUP, se pueden modificar los valores de IBLOCK y MBLOCK
+    individualmente.  Estos valores no modifican el valor de BLOCKSIZE. Por  
+    ejemplo, si se deja BLOCKSIZE en 1, que es su valor por omisi¢n, e IBLOCK
+    se cambia a 2 y MBLOCK a 4, dBASE crear  bloques de campos memo de 1024
+    bytes y bloques de ¡ndice de 256 bytes.  En este caso, los valores de
+    IBLOCK y MBLOCK prevalecen sobre el valor de BLOCKSIZE.
+
+  - En el fichero CONFIG.DB, el mandato que aparece en £ltimo lugar en
+    el fichero prevalece sobre los anteriores.  Por ejemplo, si "IBLOCK= "
+    aparece detr s de "BLOCKSIZE= " (y ocurre cuando DBSETUP escribe en
+    CONFIG.DB), el valor de IBLOCK prevalece sobre el de BLOCKSIZE.
+
+  - Si se utiliza el mandato SET BLOCKSIZE desde el punto indicativo de
+    dBASE, los valores de IBLOCK y MBLOCK se modifican a los tama¤os de
+    bloque equivalentes.
+
+- p. 507:  MEMORY(7) devuelve el tama¤o, en kilobytes, del fichero de
+  intercambio (swap) creado por VMM.  Para aumentar la velocidad, este
+  fichero siempre es creado por VMM.
+
+- p. 539:  Si establece como verdadero (.T.) el valor de <expL2>, de la
+  funci¢n RUN(), dBASE libera toda la memoria extendida disponible anterior-
+  mente a la ejecuci¢n del mandato o programa especificado.  Para averiguar
+  cuanta memoria extendida est  disponible en ese momento para ejecutar un
+  mandato o programa con RUN(), utilice la funci¢n MEMORY(0). Para determinar
+  cu nta memoria se va a liberar al ejecutar RUN(<expC>,.T.), utilice la
+  funci¢n MEMORY(3).
+
+- p. 717: La extensi¢n de un fichero objeto compilado de una consulta de
+  actualizaci¢n es .upo.
+
+
+11.  COMPATIBILIDAD
+-------------------
+
+C¢mo utilizar dBASE con DOS 5.0 DOSSHELL
+----------------------------------------
+Si ejecuta dBASE IV con un conmutador de tareas como DOSSHELL de DOS 5.0,
+se debe instalar MULTI16M.EXE. Este programa residente se suministra con
+dBASE IV. Para m s informaci¢n sobre este programa, lea el fichero
+MULTI16M.DOC.
+
+C¢mo utilizar dBASE con Stacker
+-------------------------------
+Si utiliza Stacker o cualquier otro programa de compresi¢n de disco,
+la cantidad de espacio disponible en disco indicado por DIR o cualquier
+otro mandato puede ser inferior al disponible realmente.  Esto puede
+causar problemas de espacio en disco al instalar dBASE.  Si utiliza
+stacker y tiene menos de 10MB de espacio en disco libre deber  ejecutar
+el programa SCHECK para comprobar cu nto espacio en disco hay disponible.
+Esta informaci¢n se puede encontrar bajo el ep¡grafe "Bytes Free" en el
+fichero STACVOL.
+
+C¢mo utilizar dBASE con OS/2
+----------------------------
+dBASE dar  errores si se intenta cargar con OS/2 si el par metro
+DPMI_MEMORY_LIMIT tiene un valor inferior a 4.
+
+Si ejecuta dBASE con OS/2 2.0 con el "Service Pack" instalado, con
+SET MOUSE ON, moviendo el puntero del rat¢n dBASE IV se detiene.
+Este es un problema causado con el manejador OS/2 2.0 Virtual DOS mouse,
+que se puede resolver de una de las siguientes maneras:
+
+1)  Utilice el manejador VMOUSE.SYS incluido en los dicos originales
+    de OS/2 2.0.
+2)  Configure MOUSE=OFF en el fichero CONFIG.DB.
+3)  Contacte con el soporte t‚cnico local de IBM para OS/2 y consulte
+    el problema n£mero PJ06533 para conseguir el parche que soluciona
+    este problema. El n£mero de tel‚fono en E.E.U.U. es 800-237-5511.
+
+Manejadores de rat¢n para Windows 3.1
+-------------------------------------
+Si ejecuta dBASE IV 2.0 en una sesi¢n de ventana, debe utilizar MOUSE.COM
+o MOUSE.SYS versi¢n 8.20 o superior para un correcto funcionamiento del
+rat¢n. Puede utilizar una versi¢n anterior de MOUSE.COM o MOUSE.SYS si
+ejecuta dBASE en modo de pantalla completa.
+
+C¢mo ejecutar dBASE IV multiusuario con with IBM LAN Server o Microsoft
+LAN Manager
+------------------------------------------------------------------------
+Las estaciones de trabajo clientes PC que ejecuten dBASE IV en modo
+multiusuario con IBM LAN Server o Microsoft LAN Manager pueden perder
+las conexiones de red con lo que aparecer n mensajes como "Fichero no
+encontrado", "Red ocupada", o "El dispositivo ya no existe" cuando el
+tr fico de red aumenta considerablemente.  Este es un problema de red
+y si ocurre, contacte con el Soporte T‚cnico de IBM o de Microsoft.
+
